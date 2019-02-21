@@ -23,18 +23,26 @@ namespace ConsoleApp1
 
         public void TravelVillages(Village currentVillage)
         {
-            if (currentVillage.isAstrildgeHere)
+            try
             {
-                Console.WriteLine("Astrildge is found in{0}", currentVillage.VillageName);
-                Console.WriteLine("***** FEELING HAPPY!!!***");
+                if (currentVillage.isAstrildgeHere)
+                {
+                    Console.WriteLine("Astrildge is found in{0}", currentVillage.VillageName);
+                    Console.WriteLine("***** FEELING HAPPY!!!***");
 
-                return;
+                    return;
+                }
+
+                TravelVillages(currentVillage.west);
+                TravelVillages(currentVillage.west);
+
+
             }
-
-            TravelVillages(currentVillage.west);
-            TravelVillages(currentVillage.west);
-
-
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("Here is Dragen");
+            }
+                
         }
         public void Run()
         {
@@ -56,7 +64,9 @@ namespace ConsoleApp1
 
             Wessig.west = null;
             Wessig.east = null;
-        }  
+            this.TravelVillages(Alst);
+           
+         
 
 
 
