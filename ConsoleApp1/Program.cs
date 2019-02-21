@@ -56,7 +56,7 @@ namespace ConsoleApp1
 
             Wessig.west = null;
             Wessig.east = null;
-        }
+        }  
 
 
 
