@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace ConsoleApp1
 {
     class CountrySide
-    {static void Main()
+    {
+        static void Main()
         {
             new CountrySide().Run();
         }
@@ -19,8 +20,8 @@ namespace ConsoleApp1
         Village Badden;
         Village Uster;
         Village Schvenig;
-    
-            public void TravelVillages(Village currentVillage)
+
+        public void TravelVillages(Village currentVillage)
         {
             if (currentVillage.isAstrildgeHere)
             {
@@ -28,18 +29,18 @@ namespace ConsoleApp1
                 Console.WriteLine("***** FEELING HAPPY!!!***");
 
                 return;
-            }   
-            
-                TravelVillages(currentVillage.west);
-                TravelVillages(currentVillage.west);
+            }
 
-    
-}
+            TravelVillages(currentVillage.west);
+            TravelVillages(currentVillage.west);
+
+
+        }
         public void Run()
         {
             Alst = new Village("Alst", false);
             Schvenig = new Village("Schenig", false);
-            Wessig = new Village("Wessig", true );
+            Wessig = new Village("Wessig", true);
 
             Alst.distanceToEastVillage = 14;
             Alst.distanceToWestVillage = 19;
@@ -49,17 +50,17 @@ namespace ConsoleApp1
             //Schvenig.distanceToNextVillage = 14;
             Schvenig.west = null;
             Schvenig.east = null;
-        
+
 
             //Alst.distanceToNextVillage = 14;
-          
+
             Wessig.west = null;
             Wessig.east = null;
         }
-    
 
 
-            }    
+
+    } 
 
 
             
